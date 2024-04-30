@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Little Lemon</string>
+    <string name="title">Little Lemon</string>
+    <string name="bhopal">Bhopal</string>
+    <string name="order">Order take Away</string>
+    <string name="restaurant_desc">"Discover exquisite flavors and exceptional dining experiences with our restaurant app"</string>
+    <string name="dal_bati_image">dal bati image</string>
+    <string name="dal_bati_desc">"Savor the rustic charm of Rajasthan with every bite of our crispy dal bati"</string>
+    <string name="dal_bati">Daal Batti</string>
+    <string name="login">login</string>
+    <string name="password">Password</string>
+    <string name="user_name">Username</string>
+    <string name="little_lemon_image_des">little lemon image\n</string>
+    <string name="appetizers">Appetizers</string>
+    <string name="salad">Salads</string>
+    <string name="drinks">Drinks</string>
+    <string name="mains">Mains</string>
+    <string name="indian_salad">Indian salad</string>
+</resources>
