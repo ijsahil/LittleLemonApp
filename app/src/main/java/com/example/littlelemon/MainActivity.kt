@@ -1,5 +1,6 @@
 package com.example.littlelemon
 
+import CartScreen
 import DishDetail
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -23,6 +24,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.NavType.Companion.IntType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 
@@ -38,16 +40,19 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MyNavigation() {
     val navController = rememberNavController()
-
+    val hideBottomBarRoutes = listOf(Login.route)
 
 
     Scaffold(
         bottomBar = {
-            MyBottomNavigation(navController = navController)
+            val navBackStackEntry = navController.currentBackStackEntryAsState().value
+            if (navBackStackEntry?.destination?.route !in hideBottomBarRoutes) {
+                MyBottomNavigation(navController = navController)
+            }
         }
     ) {
         Box(modifier = Modifier.padding(it)) {
-            NavHost(navController = navController, startDestination = HomeTab.route) {
+            NavHost(navController = navController, startDestination = Login.route) {
                 composable(Location.route) {
                     LocationScreen()
                 }
@@ -58,8 +63,14 @@ fun MyNavigation() {
                     MenuScreen(navController)
                 }
                 composable(Login.route) {
+
                     LittleLemonLogin(navController = navController)
                 }
+
+                composable(Cart.route){
+                    CartScreen()
+                }
+
                 composable(
                     DishDetail.route + "/{${DishDetail.argDishId}}",
                     arguments = listOf(navArgument(DishDetail.argDishId) {
@@ -86,7 +97,7 @@ fun HomeScreen(navController: NavHostController) {
             DrawablePanel(scaffoldState = scaffoldState, scope = scope)
         },
         topBar = {
-            TopAppBar(scaffoldState, scope)
+            TopAppBar(scaffoldState, scope, navController)
         },
     ) { innerPadding ->
         Column(modifier = Modifier.padding(innerPadding)) {

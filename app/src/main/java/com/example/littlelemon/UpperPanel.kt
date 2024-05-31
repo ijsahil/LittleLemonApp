@@ -85,11 +85,11 @@ fun UpperPanel() {
         // Order Button
         Button(
             onClick = {
-                Toast.makeText(context, "Order Confirmed", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "Table booked", Toast.LENGTH_LONG).show()
             },
             border = BorderStroke(1.dp, Color.Red),
             shape = RoundedCornerShape(10.dp),
-            colors = ButtonDefaults.buttonColors(Color(0XFFF4CE14)),
+            colors = ButtonDefaults.buttonColors(Color.LightGray),
             modifier = Modifier.padding(vertical = 16.dp) // Add vertical spacing
         ) {
             Text(
@@ -110,10 +110,5 @@ fun RestaurantName(name: String, size: Int, color: Color, modifier: Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun RestaurantNamePreview() {
-    RestaurantName(
-        name = stringResource(R.string.title),
-        size = 32,
-        color = Color.Blue,
-        modifier = Modifier.padding(22.dp)
-    )
+   UpperPanel()
 }

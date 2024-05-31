@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Little Lemon</string>
-    <string name="title">Little Lemon</string>
+    <string name="title">Fast food delivery app</string>
     <string name="bhopal">Bhopal</string>
-    <string name="order">Order take Away</string>
+    <string name="order">Book a table</string>
     <string name="restaurant_desc">"Discover exquisite flavors and exceptional dining experiences with our restaurant app"</string>
     <string name="dal_bati_image">dal bati image</string>
     <string name="dal_bati_desc">"Savor the rustic charm of Rajasthan with every bite of our crispy dal bati"</string>

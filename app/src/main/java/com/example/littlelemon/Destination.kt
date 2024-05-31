@@ -20,3 +20,7 @@ object DishDetail : Destination{
     override val route = "DishDetail"
     const val argDishId = "DishId"
 }
+
+object Cart : Destination{
+    override val route =  "Cart"
+}

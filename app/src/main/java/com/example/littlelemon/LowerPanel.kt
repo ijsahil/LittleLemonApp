@@ -90,7 +90,7 @@ fun MenuDish(dish: MenuDish, navController: NavHostController) {
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "₹ ${dish.price}",
+                    text = "₹${dish.price}/-",
                     fontWeight = FontWeight.Bold,
                     color = Color.Gray,
                     fontSize = 16.sp

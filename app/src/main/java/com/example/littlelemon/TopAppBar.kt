@@ -14,11 +14,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 @Composable
-fun TopAppBar(scaffoldState: ScaffoldState? = null, scope: CoroutineScope? = null) {
+fun TopAppBar(
+    scaffoldState: ScaffoldState? = null,
+    scope: CoroutineScope? = null,
+    navController: NavHostController,
+) {
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
         modifier = Modifier.fillMaxWidth(),
@@ -42,7 +47,9 @@ fun TopAppBar(scaffoldState: ScaffoldState? = null, scope: CoroutineScope? = nul
                 .fillMaxWidth(0.5F)
                 .padding(horizontal = 20.dp)
         )
-        IconButton(onClick = { /*TODO*/ }) {
+        IconButton(onClick = {
+            navController.navigate(Cart.route)
+        }) {
             Image(
                 painter = painterResource(id = R.mipmap.basket),
                 contentDescription = "Cart",
@@ -55,5 +62,5 @@ fun TopAppBar(scaffoldState: ScaffoldState? = null, scope: CoroutineScope? = nul
 @Preview(showSystemUi = true, showBackground = true)
 @Composable
 fun TopAppBarPreview() {
-    TopAppBar()
+
 }
